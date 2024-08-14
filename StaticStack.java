@@ -7,7 +7,7 @@ public class StaticStack<T> {
         data = (T[]) new Object[size];
     }
 
-    //. metodo que adiciona um item ao topo da pilha
+    //. metodo que adiciona um item ao topo da pilha conforme explicado 
     public void push(T item) {
         if (isFull()) {
             throw new StackOverflowError("Cheio");
@@ -15,7 +15,7 @@ public class StaticStack<T> {
         data[++top] = item;
     }
 
-    //. metodo que remove o item do topo da pilla
+    //. metodo que remove o item do topo da pilla remove o ultimo adicionado
     public T pop() {
         if (isEmpty()) {
             throw new IllegalStateException("Vazio");
@@ -23,12 +23,12 @@ public class StaticStack<T> {
         return data[top--];
     }
 
-    //. metodo que limpa a pilha (reseta o topo)
+    //. metodo que limpa a pilha (reseta o topo) definindo a pilha como -1
     public void clear() {
         top = -1;
     }
 
-    //. metodo que verifica se a pilha esta cheia 
+    //. metodo que verifica se a pilha esta cheia e retorna um verdadeiro ou falso
     public boolean isFull() {
         return top == data.length - 1;
     }
