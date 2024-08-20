@@ -1,3 +1,4 @@
+package pilha;
 public class DynamicStack<T> {
     private Node<T> top; // Referência para o nó no topo da pilha
 

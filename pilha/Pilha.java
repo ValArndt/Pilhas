@@ -1,3 +1,4 @@
+package pilha;
 public class Pilha{
    private int topo = -1; //.indicando a possição do topo da pilha
    private int[] data;

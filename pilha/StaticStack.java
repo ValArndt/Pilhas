@@ -1,3 +1,4 @@
+package pilha;
 public class StaticStack<T> {
     private int top = -1;
     private T[] data;
