@@ -43,5 +43,6 @@ public class Main {
         if (queue.isEmpty()) {
             System.out.println("A fila foi limpa e está vazia.");
         }
+        queue.print();
     }
 }

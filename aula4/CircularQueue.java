@@ -29,6 +29,12 @@ public class CircularQueue<T> {
         return item;
     }
 
+    public void print() {
+        for (int i = 0; i < data.length; i++) {
+            System.out.println(data[i]);
+        }
+    }
+
     public void clear() {
         top = -1;  // Reseta o topo
         base = 0;  // Reseta a base
