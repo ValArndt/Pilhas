@@ -1,11 +1,11 @@
-public class tabela {
+public class TabelaHash {
     private static final int TAMANHO = 10; 
     private int[] tabela; 
 
     public TabelaHash() {
         tabela = new int[TAMANHO];
         for (int i = 0; i < TAMANHO; i++) {
-            tabela[i] = 0; 
+            tabela[i] = 0;
         }
     }
 
@@ -16,8 +16,8 @@ public class tabela {
     public boolean inserir(int chave) {
         int hash = funcaoHash(chave);
         for (int i = 0; i < TAMANHO; i++) {
-            int posicao = (hash + i) % TAMANHO; 
-            if (tabela[posicao] == 0) { 
+            int posicao = (hash + i) % TAMANHO;
+            if (tabela[posicao] == 0) {
                 tabela[posicao] = chave;
                 return true;
             }
@@ -30,11 +30,11 @@ public class tabela {
         int hash = funcaoHash(chave);
         for (int i = 0; i < TAMANHO; i++) {
             int posicao = (hash + i) % TAMANHO;
-            if (tabela[posicao] == 0) { 
-                return false;
+            if (tabela[posicao] == 0) {
+                return false; 
             }
-            if (tabela[posicao] == chave) { 
-                return true;
+            if (tabela[posicao] == chave) {
+                return true; 
             }
         }
         return false; 
@@ -44,8 +44,8 @@ public class tabela {
         int hash = funcaoHash(chave);
         for (int i = 0; i < TAMANHO; i++) {
             int posicao = (hash + i) % TAMANHO;
-            if (tabela[posicao] == 0) { 
-                return false;
+            if (tabela[posicao] == 0) {
+                return false; 
             }
             if (tabela[posicao] == chave) {
                 tabela[posicao] = 0; 
@@ -55,29 +55,9 @@ public class tabela {
         return false; 
     }
 
-
     public void imprimir() {
         for (int i = 0; i < TAMANHO; i++) {
             System.out.println("Posição " + i + ": " + tabela[i]);
         }
-    }
-
-    public static void main(String[] args) {
-        TabelaHash tabela = new TabelaHash();
-
-        tabela.inserir(15);
-        tabela.inserir(25);
-        tabela.inserir(35);
-
-        tabela.imprimir();
-
-        System.out.println("Buscar 25: " + tabela.buscar(25)); 
-        System.out.println("Buscar 30: " + tabela.buscar(30)); 
-
-
-        System.out.println("Remover 25: " + tabela.remover(25)); 
-        tabela.imprimir();
-
-        System.out.println("Remover 25 novamente: " + tabela.remover(25)); 
     }
 }
